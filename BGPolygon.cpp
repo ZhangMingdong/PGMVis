@@ -305,15 +305,6 @@ int BGPolygon::y(){
 }
 void BGPolygon::setX(int x){}
 void BGPolygon::setY(int y){}
-QPointF BGPolygon::getLinkFromPos(){
-	return this->pos();
-}
-QPointF BGPolygon::getLinkPos(int index){
-	return this->pos();
-}
-QPointF BGPolygon::getLinkToPos(){ 
-	return this->pos(); 
-}
 QString BGPolygon::getPortId(int index){ return ""; }
 bool BGPolygon::i_isSelected(){
 	return this->isSelected();

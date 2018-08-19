@@ -74,9 +74,6 @@ void IBasicGraphicItem::updateLink(){
 
 QVariant IBasicGraphicItem::itemChange(GraphicsItemChange change, const QVariant &value)
 {
-	if (change == QGraphicsItem::ItemPositionHasChanged) {
-		qDebug() << "item" <<this->pos();
-	}
 	if (change == ItemPositionHasChanged) {
 		updateLink();
 	}
@@ -189,18 +186,6 @@ QRectF IBasicGraphicItem::outlineRect() const
 	return QRectF();
 }
 
-QPointF IBasicGraphicItem::getLinkFromPos(){
-	return this->pos();
-}
-
-QPointF IBasicGraphicItem::getLinkToPos(){
-	return this->pos();
-}
-
-QPointF IBasicGraphicItem::getLinkPos(int index){
-	return this->pos();
-}
-
 QPointF IBasicGraphicItem::getLinkPos(QPointF ptTarget){
 	return this->pos();
 }
@@ -239,17 +224,6 @@ void IBasicGraphicItem::SetDataId(int id)
 }
 
 
-QPointF IBasicGraphicItem::GetGroupPos(){
-	BGGroup* group = dynamic_cast<BGGroup*>(this->group());
-	if (group)
-	{
-		return this->pos() + group->GetGroupPos();
-
-	}
-	else{
-		return this->pos();
-	}
-}
 BGGroup* IBasicGraphicItem::i_group(){
 	return dynamic_cast<BGGroup*>(this->group());
 }

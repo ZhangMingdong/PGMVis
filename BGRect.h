@@ -29,7 +29,6 @@ protected:
 private:
 	int roundness(double size) const;
 public:
-	virtual QPointF getLinkPos(int index);
 	virtual QPointF getLinkPos(QPointF ptTarget);
 
 

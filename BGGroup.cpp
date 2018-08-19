@@ -138,32 +138,6 @@ QVariant BGGroup::itemChange(GraphicsItemChange change, const QVariant &value)
 	}
 	return QGraphicsItemGroup::itemChange(change, value);
 }
-
-QPointF BGGroup::getLinkFromPos(){
-	int nChild = this->childItems().length();
-	if (this->childItems().empty())
-	{
-		return this->pos();
-	}
-	else{
-		if (m_nIndexFrom>=0&&m_nIndexFrom<nChild)
-		{
-			return this->childItems()[m_nIndexFrom]->pos() + this->pos();
-		}
-		else{
-			return this->childItems()[0]->pos() + this->pos();
-		}
-	}
-}
-
-QPointF BGGroup::getLinkToPos(){
-	QRectF rect = this->outlineRect();
-	// 	QPointF ptt = this->pos();
-	rect.translate(this->pos());
-	return rect.center();
-
-}
-
 QPointF BGGroup::i_posAbs()
 {
 	return this->pos();
@@ -175,23 +149,6 @@ QPointF BGGroup::i_posRel()
 	// 	QPointF ptt = this->pos();
 	rect.translate(this->pos());
 	return rect.center();
-}
-
-QPointF BGGroup::getLinkPos(int index){
-	int nChild = this->childItems().length();
-	if (this->childItems().empty())
-	{
-		return this->pos();
-	}
-	else{
-		if (index >= 0 && index < nChild)
-		{
-			return this->childItems()[index]->pos() + this->pos();
-		}
-		else{
-			return this->childItems()[0]->pos() + this->pos();
-		}
-	}
 }
 
 QPointF BGGroup::getRotationCenter(){
@@ -398,14 +355,3 @@ BGGroup* BGGroup::i_group(){
 	return dynamic_cast<BGGroup*>(this->group());
 }
 
-
-QPointF BGGroup::getLinkPos(){
-	BGGroup* group = i_group();
-	if (group)
-	{
-		return this->i_posRel() + group->GetGroupPos();
-	}
-	else{
-		return this->i_posRel();
-	}
-}

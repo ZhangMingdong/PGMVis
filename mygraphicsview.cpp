@@ -54,7 +54,7 @@ void MyGraphicsView::mouseMoveEvent(QMouseEvent * event)
 			IAbstractItem* item = dynamic_cast<IAbstractItem*>(g);
 			if (item && item!=m_pDrawingLine && item!=m_pLinkFrom)
 			{
-				m_pDrawingLine->SetTo(item->getLinkPos());
+				m_pDrawingLine->SetTo(item->getItemCenter());
 			}
 			else{
 				m_pDrawingLine->SetTo(m_ptCurrent);
@@ -124,8 +124,8 @@ void MyGraphicsView::mousePressEvent(QMouseEvent * event)
 			if (m_pLinkFrom)
 			{
 				m_pDrawingLine = new BGLine();
-				m_pDrawingLine->SetFrom(m_pLinkFrom->getLinkPos());
-				m_pDrawingLine->SetTo(m_pLinkFrom->getLinkPos());
+				m_pDrawingLine->SetFrom(m_pLinkFrom->getItemCenter());
+				m_pDrawingLine->SetTo(m_pLinkFrom->getItemCenter());
 				scene()->addItem(m_pDrawingLine);
 				scene()->clearSelection();
 				m_pDrawingLine->setSelected(true);

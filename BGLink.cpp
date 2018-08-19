@@ -66,8 +66,9 @@ void BGLink::trackNodes()
 
 	// get the points of the line
 
-	QPointF ptStartCenter = m_pNodeFrom->getLinkPos();
-	QPointF ptEndCenter = m_pNodeTo->getLinkPos();
+	QPointF ptStartCenter = m_pNodeFrom->getItemCenter();
+	QPointF ptEndCenter = m_pNodeTo->getItemCenter();
+	qDebug() << ptStartCenter << ptEndCenter;
 
 	QPointF ptStart = m_pNodeFrom->getLinkPos(ptEndCenter);
 	QPointF ptEnd = m_pNodeTo->getLinkPos(ptStartCenter);

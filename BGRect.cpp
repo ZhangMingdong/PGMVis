@@ -60,25 +60,6 @@ int BGRect::roundness(double size) const
 	return 100 * Diameter / int(size);
 }
 
-QPointF BGRect::getLinkPos(int index){
-	switch (index)
-	{
-	case 0:
-		return QPointF(this->x(), this->y() - this->height() / 2.0);
-		break;
-	case 1:
-		return QPointF(this->x() - this->width() / 2.0, this->y());
-		break;
-	case 2:
-		return QPointF(this->x(), this->y() + this->height() / 2.0);
-		break;
-	case 3:
-		return QPointF(this->x() + this->width() / 2.0, this->y());
-		break;
-	default:
-		return this->pos();
-	}
-}
 QPointF BGRect::getLinkPos(QPointF ptTarget){
 	QPointF pt[4];
 	qreal len[4];

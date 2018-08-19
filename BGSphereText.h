@@ -16,6 +16,5 @@ private:
 	static int s_nSeq;
 protected:
 	virtual void drawGraphic(QPainter *painter);
-	virtual QPointF getLinkPos(QPointF ptTarget);
 };
 

@@ -175,27 +175,6 @@ bool BGTextBase::readProperties(QXmlStreamReader& reader){
 
 }
 
-QPointF BGTextBase::getLinkPos(int index){
-	QRectF rect = this->outlineRect();
-	switch (index)
-	{
-	case 0:
-		return QPointF(this->x(), this->y() - rect.height() / 2.0);
-		break;
-	case 1:
-		return QPointF(this->x() - rect.width() / 2.0, this->y());
-		break;
-	case 2:
-		return QPointF(this->x(), this->y() + rect.height() / 2.0);
-		break;
-	case 3:
-		return QPointF(this->x() + rect.width() / 2.0, this->y());
-		break;
-	default:
-		return this->pos();
-	}
-}
-
 QPointF BGTextBase::getLinkPos(QPointF ptTarget){
 	QRectF rect = this->outlineRect();
 	QPointF ptCenter = this->GetGroupPos()+rect.center();

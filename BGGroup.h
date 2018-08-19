@@ -36,9 +36,6 @@ protected:
 	QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
 public:	// from abstract item
-	virtual QPointF getLinkFromPos();
-	virtual QPointF getLinkToPos();
-	virtual QPointF getLinkPos(int index);
 	virtual QPointF getLinkPos(QPointF ptTarget);
 	virtual QPointF getRotationCenter();
 	virtual QString getPortId(int index);
@@ -77,7 +74,5 @@ private:
 	QRectF outlineRect() const;
 	QRectF boundingRect() const;
 	int roundness(double size) const;
-public:
-	virtual QPointF getLinkPos();
 };
 

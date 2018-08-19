@@ -50,10 +50,6 @@ protected:
 	bool readY(QXmlStreamReader& reader);
 
 public:	// from abstract item
-	virtual QPointF getLinkFromPos();
-	virtual QPointF getLinkToPos() ;
-	virtual QPointF getLinkPos(int index);
-	
 	virtual QPointF getLinkPos(QPointF ptTarget);
 protected:
 	virtual bool i_isSelected();
@@ -73,8 +69,6 @@ protected:
 	int m_nDataId;
 public:
 	int DataId(){ return m_nDataId; }
-public:
-	QPointF GetGroupPos();
 public slots:
 	void SetDataId(int id);
 

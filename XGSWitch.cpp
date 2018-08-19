@@ -80,26 +80,3 @@ void XGSWitch::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)
 		emit dirty();
 	}
 }
-
-QPointF XGSWitch::getLinkPos(int index){
-	if (m_nWidth>m_nHeight)
-	{
-		if (index == 0)
-		{
-			return this->pos() + QPointF(m_nWidth / 2, 0);
-		}
-		else{
-			return this->pos() - QPointF(m_nWidth / 2, 0);
-		}
-	}
-	else{
-
-		if (index == 0)
-		{
-			return this->pos() + QPointF(0, m_nHeight / 2);
-		}
-		else{
-			return this->pos() - QPointF(0, m_nHeight / 2);
-		}
-	}
-}

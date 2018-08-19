@@ -27,6 +27,5 @@ protected:
 	void paintSelectionOutline(QPainter *painter);
 public:
 	virtual int indexRange(){ return 2; };
-	virtual QPointF getLinkPos(int index); 
 };
 

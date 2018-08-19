@@ -38,7 +38,6 @@ private:
 
 	QString myText; 
 public:
-	virtual QPointF getLinkPos(int index);
 	virtual QPointF getLinkPos(QPointF ptTarget);
 
 };

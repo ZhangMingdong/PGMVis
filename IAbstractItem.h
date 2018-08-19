@@ -77,11 +77,8 @@ public:
 	virtual void setX(int x) = 0;
 	virtual void setY(int y) = 0;
 public:
-	virtual QPointF getLinkFromPos() = 0;
-	virtual QPointF getLinkPos(int index) = 0;
-	virtual QPointF getLinkToPos() = 0;
 	virtual QPointF getLinkPos(QPointF ptTarget) = 0;
-	virtual QPointF getLinkPos(){
+	virtual QPointF getItemCenter(){
 		return GetGroupPos();
 	}
 	virtual QString getPortId(int index){ return ""; };

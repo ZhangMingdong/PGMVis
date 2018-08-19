@@ -22,5 +22,6 @@ protected:
 	void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
 	virtual void drawGraphic(QPainter *painter);
 	void paintSelectionOutline(QPainter *painter);
+	virtual QPointF getLinkPos(QPointF ptTarget);
 };
 

@@ -25,9 +25,6 @@ public:
 	virtual void setX(int x) ;
 	virtual void setY(int y) ;
 public:
-	virtual QPointF getLinkFromPos() ;
-	virtual QPointF getLinkPos(int index) ;
-	virtual QPointF getLinkToPos();
 	virtual QPointF getLinkPos(QPointF ptTarget){
 		return pos();
 	};
