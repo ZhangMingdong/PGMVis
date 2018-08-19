@@ -1,11 +1,14 @@
-#ifndef LINK_H
-#define LINK_H
+#pragma once
 
 #include <QGraphicsPathItem>
 #include <QXmlStreamWriter>
 
 class IAbstractItem;
 
+/*
+	If it is heritated from QGraphicsLineItem, then cannot support orthogonal layout
+	2018/08/19
+*/
 class BGLink : public QObject, public QGraphicsPathItem
 {
 	Q_OBJECT
@@ -67,4 +70,3 @@ private:
 
 };
 
-#endif

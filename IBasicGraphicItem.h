@@ -53,6 +53,7 @@ public:	// from abstract item
 	virtual QPointF getLinkFromPos();
 	virtual QPointF getLinkToPos() ;
 	virtual QPointF getLinkPos(int index);
+	
 	virtual QPointF getLinkPos(QPointF ptTarget);
 protected:
 	virtual bool i_isSelected();

@@ -51,6 +51,7 @@ void BGLink::setToNode(IAbstractItem* node){
 void BGLink::setColor(const QColor &color)
 {
 	setPen(QPen(color, 1.0));
+	setBrush(color);
 }
 
 QColor BGLink::color() const
@@ -62,38 +63,59 @@ void BGLink::trackNodes()
 {
 	bool bDrawArrow = true;
 	QPainterPath path;
-	// original method
-// 	QPointF ptStart = m_pNodeFrom->getLinkPos(m_nIndexFrom);
-// 	QPointF ptEnd = m_pNodeTo->getLinkPos(m_nIndexTo);
 
-	// improved method
+	// get the points of the line
+
 	QPointF ptStartCenter = m_pNodeFrom->getLinkPos();
 	QPointF ptEndCenter = m_pNodeTo->getLinkPos();
+
 	QPointF ptStart = m_pNodeFrom->getLinkPos(ptEndCenter);
 	QPointF ptEnd = m_pNodeTo->getLinkPos(ptStartCenter);
+
+
 	if (m_style==LS_Curve)
 	{
-		// calculate arrow
-		QPointF pt = ptStart - ptEnd;
-		QPointF pt1(pt.x()*HALF_SQRT30 + pt.y()*0.5, -pt.x()*0.5 + pt.y()*HALF_SQRT30);
-		QPointF pt2(pt.x()*HALF_SQRT30 - pt.y()*0.5, pt.x()*0.5 + pt.y()*HALF_SQRT30);
-		double scale = sqrt(pt.x()*pt.x() + pt.y() * pt.y()) / 20.0;
-		pt1 /= scale;
-		pt2 /= scale;
-		pt1 += ptEnd;
-		pt2 += ptEnd;
 		// draw line
 		path.moveTo(ptStart);
 		path.lineTo(ptEnd);
+
 		if (bDrawArrow)
 		{
+			qreal arrowSize = 20;
+			QLineF line = QLineF(ptEnd,ptStart);
+			double angle = std::atan2(-line.dy(), line.dx());
+
+			QPointF arrowP1 = line.p1() + QPointF(sin(angle + M_PI / 3) * arrowSize,
+				cos(angle + M_PI / 3) * arrowSize);
+			QPointF arrowP2 = line.p1() + QPointF(sin(angle + M_PI - M_PI / 3) * arrowSize,
+				cos(angle + M_PI - M_PI / 3) * arrowSize);
+
+			QPolygonF arrowHead;
+			arrowHead << line.p1() << arrowP1 << arrowP2;
+			path.addPolygon(arrowHead);
+
+			/*
+			// calculate arrow
+			QPointF pt = ptStart - ptEnd;
+			QPointF pt1(pt.x()*HALF_SQRT30 + pt.y()*0.5, -pt.x()*0.5 + pt.y()*HALF_SQRT30);
+			QPointF pt2(pt.x()*HALF_SQRT30 - pt.y()*0.5, pt.x()*0.5 + pt.y()*HALF_SQRT30);
+			double scale = sqrt(pt.x()*pt.x() + pt.y() * pt.y()) / 20.0;
+			pt1 /= scale;
+			pt2 /= scale;
+			pt1 += ptEnd;
+			pt2 += ptEnd;
+
+			qreal arrowSize = 20;
+
 			// draw arrow
 			path.lineTo(pt1);
 			path.moveTo(ptEnd);
 			path.lineTo(pt2);
+			*/
 		}
 	}
 	else{
+		// orthogonal layout
 		// calculate base
 		QPointF ptStartDir = ptStart - ptStartCenter;
 		QPointF ptEndDir = ptEnd - ptEndCenter;
@@ -120,35 +142,25 @@ void BGLink::trackNodes()
 				ptEndBase = QPointF(x, ptEnd.y());
 			}
 		}
-// 		double dx = abs(ptStart.x() - ptEnd.x());
-// 		double dy = abs(ptStart.y() - ptEnd.y());
-// 		if (dx > dy)
-// 		{
-// 			double y = (ptEnd.y() + ptStart.y()) / 2.0;
-// 			ptStartBase = QPointF(ptStart.x(), y);
-// 			ptEndBase = QPointF(ptEnd.x(), y);
-// 		}
-// 		else{
-// 			double x = (ptEnd.x() + ptStart.x()) / 2.0;
-// 			ptStartBase = QPointF(x,ptStart.y());
-// 			ptEndBase = QPointF(x,ptEnd.y());
-// 		}
-		// calculate arrow
-		QPointF pt = ptEndBase - ptEnd;
-		QPointF pt1(pt.x()*HALF_SQRT30 + pt.y()*0.5, -pt.x()*0.5 + pt.y()*HALF_SQRT30);
-		QPointF pt2(pt.x()*HALF_SQRT30 - pt.y()*0.5, pt.x()*0.5 + pt.y()*HALF_SQRT30);
-		double scale = sqrt(pt.x()*pt.x() + pt.y() * pt.y()) / 20.0;
-		pt1 /= scale;
-		pt2 /= scale;
-		pt1 += ptEnd;
-		pt2 += ptEnd;
-		// draw line
-		path.moveTo(ptStart);
-		path.lineTo(ptStartBase);
-		path.lineTo(ptEndBase);
-		path.lineTo(ptEnd);
+
+
 		if (bDrawArrow)
 		{
+			// calculate arrow
+			QPointF pt = ptEndBase - ptEnd;
+			QPointF pt1(pt.x()*HALF_SQRT30 + pt.y()*0.5, -pt.x()*0.5 + pt.y()*HALF_SQRT30);
+			QPointF pt2(pt.x()*HALF_SQRT30 - pt.y()*0.5, pt.x()*0.5 + pt.y()*HALF_SQRT30);
+			double scale = sqrt(pt.x()*pt.x() + pt.y() * pt.y()) / 20.0;
+			pt1 /= scale;
+			pt2 /= scale;
+			pt1 += ptEnd;
+			pt2 += ptEnd;
+			// draw line
+			path.moveTo(ptStart);
+			path.lineTo(ptStartBase);
+			path.lineTo(ptEndBase);
+			path.lineTo(ptEnd);
+
 			// draw arrow
 			path.lineTo(pt1);
 			path.moveTo(ptEnd);

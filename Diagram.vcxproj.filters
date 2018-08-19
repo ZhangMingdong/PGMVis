@@ -39,6 +39,9 @@
     <Filter Include="Header Files\Widget">
       <UniqueIdentifier>{163518b8-6ec7-41d2-bd8a-8950f7fed2ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\PGMElem">
+      <UniqueIdentifier>{44ad2ab3-21d5-4cf5-9071-9d28d62edef0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

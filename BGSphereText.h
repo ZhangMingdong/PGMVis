@@ -2,13 +2,16 @@
 #include "BGSphere.h"
 
 #include <QString>
+/*
+	Sphere with text
+*/
 class BGSphereText:public BGSphere
 {
 public:
 	BGSphereText();
 	~BGSphereText();
 private:
-	QString m_strLabel;
+	QString _strLabel;
 	// ¼ÆÊý
 	static int s_nSeq;
 protected:

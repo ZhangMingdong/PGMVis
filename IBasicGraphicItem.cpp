@@ -8,6 +8,7 @@
 
 #include <QPainter>
 #include <QStyleOptionGraphicsItem>
+#include <QDebug>
 
 
 IBasicGraphicItem::IBasicGraphicItem() : QGraphicsItem()
@@ -73,6 +74,9 @@ void IBasicGraphicItem::updateLink(){
 
 QVariant IBasicGraphicItem::itemChange(GraphicsItemChange change, const QVariant &value)
 {
+	if (change == QGraphicsItem::ItemPositionHasChanged) {
+		qDebug() << "item" <<this->pos();
+	}
 	if (change == ItemPositionHasChanged) {
 		updateLink();
 	}
@@ -240,6 +244,7 @@ QPointF IBasicGraphicItem::GetGroupPos(){
 	if (group)
 	{
 		return this->pos() + group->GetGroupPos();
+
 	}
 	else{
 		return this->pos();

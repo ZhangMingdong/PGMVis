@@ -6,7 +6,7 @@ int BGSphereText::s_nSeq = 0;
 
 BGSphereText::BGSphereText()
 {
-	m_strLabel = 'C' + s_nSeq;
+	_strLabel = 'C' + s_nSeq;
 	s_nSeq++;
 }
 
@@ -19,11 +19,12 @@ void BGSphereText::drawGraphic(QPainter *painter)
 {
 	QRectF rect = outlineRect();
 	painter->drawEllipse(rect);
-	painter->drawText(rect, Qt::AlignCenter, m_strLabel);
+	painter->drawText(rect, Qt::AlignCenter, _strLabel);
 
 }
+
 QPointF BGSphereText::getLinkPos(QPointF ptTarget){
-	QPointF ptCenter = this->pos();
+	QPointF ptCenter = IAbstractItem::getLinkPos();
 
 	QPointF dsp = ptTarget - ptCenter;
 	double normDsp = sqrt(dsp.x()*dsp.x() + dsp.y()*dsp.y());
