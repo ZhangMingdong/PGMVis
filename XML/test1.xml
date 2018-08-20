@@ -4,8 +4,8 @@
         <sphere>
             <id>{1ead81b5-8b05-4e95-99aa-bc403aa86747}</id>
             <dataId>-1</dataId>
-            <x>123</x>
-            <y>122</y>
+            <x>214</x>
+            <y>154</y>
             <brush>
                 <color>
                     <r>0</r>
@@ -109,8 +109,8 @@
             <id>{03f26bc9-8e8e-48f7-9b9a-df31ae0aeffb}</id>
             <from>{f90b84fb-06f0-4b96-b00a-d985a7f9ec55}</from>
             <to>{340693fa-a903-4176-b048-bd8bbc363da4}</to>
-            <x>141</x>
-            <y>-14</y>
+            <x>251.424</x>
+            <y>22.53</y>
             <angle>0</angle>
             <shearh>0</shearh>
             <shearv>0</shearv>

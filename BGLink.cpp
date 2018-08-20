@@ -68,10 +68,11 @@ void BGLink::trackNodes()
 
 	QPointF ptStartCenter = m_pNodeFrom->getItemCenter();
 	QPointF ptEndCenter = m_pNodeTo->getItemCenter();
-	qDebug() << ptStartCenter << ptEndCenter;
 
 	QPointF ptStart = m_pNodeFrom->getLinkPos(ptEndCenter);
 	QPointF ptEnd = m_pNodeTo->getLinkPos(ptStartCenter);
+	qDebug() << ptStartCenter << ptEndCenter;
+	qDebug() << ptStart << ptEnd;
 
 
 	if (m_style==LS_Curve)

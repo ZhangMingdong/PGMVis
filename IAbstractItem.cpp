@@ -68,7 +68,7 @@ void IAbstractItem::setAngle(double angle)
 }
 
 void IAbstractItem::writePosition(QXmlStreamWriter& writer){
-	QPointF pos = i_posAbs();
+	QPointF pos = i_posRel();
 	writer.writeTextElement("x", QString::number(pos.x()));
 	writer.writeTextElement("y", QString::number(pos.y()));
 
@@ -143,13 +143,16 @@ bool IAbstractItem::readGroup(QXmlStreamReader& reader)
 }
 
 QPointF IAbstractItem::GetGroupPos(){
+
+	BGGroup* isGroup = dynamic_cast<BGGroup*>(this);
+	QPointF pos = isGroup ? this->i_posAbs() : this->i_posRel();
 	BGGroup* group = i_group();
 	if (group)
 	{
-		return this->i_posAbs() + group->GetGroupPos();
+		return pos + group->GetGroupRel();
 	}
 	else{
-		return this->i_posAbs();
+		return pos;
 	}
 }
 

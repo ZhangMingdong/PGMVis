@@ -74,5 +74,10 @@ private:
 	QRectF outlineRect() const;
 	QRectF boundingRect() const;
 	int roundness(double size) const;
+public:
+
+	QPointF GetGroupRel() {
+		return i_posRel();
+	}
 };
 

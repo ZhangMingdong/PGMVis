@@ -96,6 +96,7 @@ protected:
 	bool readGroup(QXmlStreamReader& reader);
 public:
 	QUuid GetGroupId(){ return m_groupid; }
+	// get the position of this item, considering group hierarchy
 	virtual QPointF GetGroupPos();
 public:
 	virtual void updateLink()=0;

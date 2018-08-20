@@ -138,17 +138,18 @@ QVariant BGGroup::itemChange(GraphicsItemChange change, const QVariant &value)
 	}
 	return QGraphicsItemGroup::itemChange(change, value);
 }
-QPointF BGGroup::i_posAbs()
-{
-	return this->pos();
-}
 
-QPointF BGGroup::i_posRel()
+QPointF BGGroup::i_posAbs()
 {
 	QRectF rect = this->outlineRect();
 	// 	QPointF ptt = this->pos();
 	rect.translate(this->pos());
 	return rect.center();
+}
+
+QPointF BGGroup::i_posRel()
+{
+	return this->pos();
 }
 
 QPointF BGGroup::getRotationCenter(){
@@ -328,9 +329,16 @@ int BGGroup::roundness(double size) const
 }
 
 QPointF BGGroup::getLinkPos(QPointF ptTarget){
+	// 1.get the center of this group
+	/*
 	QRectF rect = this->outlineRect();
 	rect.translate(this->GetGroupPos());
 	QPointF ptCenter = rect.center();
+	*/
+
+	QRectF rect = this->outlineRect();
+	QPointF ptCenter = i_posAbs();
+	// 2.calculate bias
 	QPointF pt[4];
 	qreal len[4];
 	pt[0] = QPointF(ptCenter.x(), ptCenter.y() - rect.height() / 2.0);
@@ -351,6 +359,7 @@ QPointF BGGroup::getLinkPos(QPointF ptTarget){
 	}
 	return pt[min];
 }
+
 BGGroup* BGGroup::i_group(){
 	return dynamic_cast<BGGroup*>(this->group());
 }
