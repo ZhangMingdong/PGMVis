@@ -227,3 +227,8 @@ void IBasicGraphicItem::SetDataId(int id)
 BGGroup* IBasicGraphicItem::i_group(){
 	return dynamic_cast<BGGroup*>(this->group());
 }
+
+
+QPointF IBasicGraphicItem::i_posAbs() { return this->pos(); }
+QPointF IBasicGraphicItem::i_posRel() { return this->pos(); }
+QPointF IBasicGraphicItem::i_posGrp() { return this->pos(); }

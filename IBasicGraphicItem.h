@@ -55,8 +55,9 @@ protected:
 	virtual bool i_isSelected();
 	virtual void i_update();
 	virtual void updateTransform();
-	virtual QPointF i_posAbs(){ return this->pos(); }
-	virtual QPointF i_posRel(){ return this->pos(); }
+	virtual QPointF i_posAbs();
+	virtual QPointF i_posRel();
+	virtual QPointF i_posGrp();
 	virtual BGGroup* i_group();
 public:
 	virtual int x();

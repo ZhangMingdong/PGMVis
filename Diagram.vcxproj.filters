@@ -357,9 +357,6 @@
     <ClInclude Include="MyVisScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PGMNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BGArea.h">
       <Filter>Header Files\BG</Filter>
     </ClInclude>
@@ -386,6 +383,9 @@
     </ClInclude>
     <ClInclude Include="ProbabilityWidget.h">
       <Filter>Header Files\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="PGMNode.h">
+      <Filter>Header Files\PGMElem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <diagram>
     <items>
-        <sphere>
-            <id>{1ead81b5-8b05-4e95-99aa-bc403aa86747}</id>
+        <text>
+            <id>{f408d49a-1647-4b10-9b1a-5efa006d731a}</id>
             <dataId>-1</dataId>
-            <x>214</x>
-            <y>154</y>
-            <brush>
-                <color>
-                    <r>0</r>
-                    <g>0</g>
-                    <b>0</b>
-                </color>
-                <style>0</style>
-            </brush>
+            <x>570</x>
+            <y>285</y>
             <pen>
                 <color>
                     <r>0</r>
@@ -25,18 +17,6 @@
                 <capstyle>16</capstyle>
                 <joinstyle>64</joinstyle>
             </pen>
-            <angle>0</angle>
-            <shearh>0</shearh>
-            <shearv>0</shearv>
-            <w>30</w>
-            <h>30</h>
-        </sphere>
-        <sphere>
-            <id>{340693fa-a903-4176-b048-bd8bbc363da4}</id>
-            <dataId>-1</dataId>
-            <x>210</x>
-            <y>189</y>
-            <group>{03f26bc9-8e8e-48f7-9b9a-df31ae0aeffb}</group>
             <brush>
                 <color>
                     <r>0</r>
@@ -45,6 +25,17 @@
                 </color>
                 <style>0</style>
             </brush>
+            <angle>0</angle>
+            <shearh>0</shearh>
+            <shearv>0</shearv>
+            <text>Node 1</text>
+        </text>
+        <text>
+            <id>{fa6a64b8-a12d-4f3e-a355-198e43e1d8ee}</id>
+            <dataId>-1</dataId>
+            <x>204</x>
+            <y>172</y>
+            <group>{1977a6ca-b251-4f54-8f78-d06ac05e613b}</group>
             <pen>
                 <color>
                     <r>0</r>
@@ -56,26 +47,25 @@
                 <capstyle>16</capstyle>
                 <joinstyle>64</joinstyle>
             </pen>
+            <brush>
+                <color>
+                    <r>0</r>
+                    <g>0</g>
+                    <b>0</b>
+                </color>
+                <style>0</style>
+            </brush>
             <angle>0</angle>
             <shearh>0</shearh>
             <shearv>0</shearv>
-            <w>30</w>
-            <h>30</h>
-        </sphere>
-        <sphere>
-            <id>{f90b84fb-06f0-4b96-b00a-d985a7f9ec55}</id>
+            <text>Node 3</text>
+        </text>
+        <text>
+            <id>{66478c60-5e85-439a-9cba-30cea669b8cf}</id>
             <dataId>-1</dataId>
-            <x>180</x>
+            <x>204</x>
             <y>80</y>
-            <group>{03f26bc9-8e8e-48f7-9b9a-df31ae0aeffb}</group>
-            <brush>
-                <color>
-                    <r>0</r>
-                    <g>0</g>
-                    <b>0</b>
-                </color>
-                <style>0</style>
-            </brush>
+            <group>{1977a6ca-b251-4f54-8f78-d06ac05e613b}</group>
             <pen>
                 <color>
                     <r>0</r>
@@ -87,17 +77,32 @@
                 <capstyle>16</capstyle>
                 <joinstyle>64</joinstyle>
             </pen>
+            <brush>
+                <color>
+                    <r>0</r>
+                    <g>0</g>
+                    <b>0</b>
+                </color>
+                <style>0</style>
+            </brush>
             <angle>0</angle>
             <shearh>0</shearh>
             <shearv>0</shearv>
-            <w>30</w>
-            <h>30</h>
-        </sphere>
+            <text>Node 2</text>
+        </text>
     </items>
     <links>
         <link>
-            <from>{1ead81b5-8b05-4e95-99aa-bc403aa86747}</from>
-            <to>{03f26bc9-8e8e-48f7-9b9a-df31ae0aeffb}</to>
+            <from>{f408d49a-1647-4b10-9b1a-5efa006d731a}</from>
+            <to>{66478c60-5e85-439a-9cba-30cea669b8cf}</to>
+            <fromPort>1</fromPort>
+            <toPort>0</toPort>
+            <style>1</style>
+            <weight>0</weight>
+        </link>
+        <link>
+            <from>{66478c60-5e85-439a-9cba-30cea669b8cf}</from>
+            <to>{fa6a64b8-a12d-4f3e-a355-198e43e1d8ee}</to>
             <fromPort>1</fromPort>
             <toPort>0</toPort>
             <style>1</style>
@@ -106,11 +111,11 @@
     </links>
     <groups>
         <group>
-            <id>{03f26bc9-8e8e-48f7-9b9a-df31ae0aeffb}</id>
-            <from>{f90b84fb-06f0-4b96-b00a-d985a7f9ec55}</from>
-            <to>{340693fa-a903-4176-b048-bd8bbc363da4}</to>
-            <x>319.424</x>
-            <y>13.53</y>
+            <id>{1977a6ca-b251-4f54-8f78-d06ac05e613b}</id>
+            <from>{66478c60-5e85-439a-9cba-30cea669b8cf}</from>
+            <to>{66478c60-5e85-439a-9cba-30cea669b8cf}</to>
+            <x>513</x>
+            <y>205</y>
             <angle>0</angle>
             <shearh>0</shearh>
             <shearv>0</shearv>

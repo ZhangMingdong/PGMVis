@@ -26,7 +26,11 @@ int main(int argc, char *argv[])
 	app.setOrganizationDomain("Leoben.cn");
 	app.setWindowIcon(QIcon(":images/icon.png"));
 
-    MainWindow view;
-    view.show();
-    return app.exec();
+
+	MainWindow view;
+	view.show();
+
+
+	app.exec();
+
 }

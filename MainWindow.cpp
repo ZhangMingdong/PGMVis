@@ -1864,12 +1864,12 @@ void MainWindow::editCombine()
 
 void MainWindow::editDetach()
 {
+
 	QList<QGraphicsItem *> items = _pGraphicScene->selectedItems();
 	if (items.count() == 1) {
 		BGGroup* group = dynamic_cast<BGGroup *>(items.first());
 		group->RemoveLinks();
 		_pGraphicScene->destroyItemGroup(group);
-		Sleep(10);
 	}
 }
 

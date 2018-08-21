@@ -2,10 +2,10 @@
 <diagram>
     <items>
         <sphere>
-            <id>{1ead81b5-8b05-4e95-99aa-bc403aa86747}</id>
+            <id>{24ff283d-162a-4c0b-9016-d1946765a4d4}</id>
             <dataId>-1</dataId>
-            <x>214</x>
-            <y>154</y>
+            <x>124</x>
+            <y>235</y>
             <brush>
                 <color>
                     <r>0</r>
@@ -32,11 +32,11 @@
             <h>30</h>
         </sphere>
         <sphere>
-            <id>{340693fa-a903-4176-b048-bd8bbc363da4}</id>
+            <id>{d678bab4-478a-416e-a44f-b69d18d61a46}</id>
             <dataId>-1</dataId>
-            <x>210</x>
-            <y>189</y>
-            <group>{03f26bc9-8e8e-48f7-9b9a-df31ae0aeffb}</group>
+            <x>380</x>
+            <y>130</y>
+            <group>{5fdb675f-0e28-4be1-b683-395a522b42dc}</group>
             <brush>
                 <color>
                     <r>0</r>
@@ -63,11 +63,42 @@
             <h>30</h>
         </sphere>
         <sphere>
-            <id>{f90b84fb-06f0-4b96-b00a-d985a7f9ec55}</id>
+            <id>{e5fd3dfb-cdbb-4c1e-807a-17de9ad06d85}</id>
             <dataId>-1</dataId>
             <x>180</x>
-            <y>80</y>
-            <group>{03f26bc9-8e8e-48f7-9b9a-df31ae0aeffb}</group>
+            <y>130</y>
+            <group>{863046e8-1c28-42dc-a479-5a7ac0c30896}</group>
+            <brush>
+                <color>
+                    <r>0</r>
+                    <g>0</g>
+                    <b>0</b>
+                </color>
+                <style>0</style>
+            </brush>
+            <pen>
+                <color>
+                    <r>0</r>
+                    <g>0</g>
+                    <b>0</b>
+                </color>
+                <width>1</width>
+                <style>1</style>
+                <capstyle>16</capstyle>
+                <joinstyle>64</joinstyle>
+            </pen>
+            <angle>0</angle>
+            <shearh>0</shearh>
+            <shearv>0</shearv>
+            <w>30</w>
+            <h>30</h>
+        </sphere>
+        <sphere>
+            <id>{cf7c6f5a-25f3-4094-bfed-5a204159c527}</id>
+            <dataId>-1</dataId>
+            <x>280</x>
+            <y>130</y>
+            <group>{863046e8-1c28-42dc-a479-5a7ac0c30896}</group>
             <brush>
                 <color>
                     <r>0</r>
@@ -96,8 +127,8 @@
     </items>
     <links>
         <link>
-            <from>{1ead81b5-8b05-4e95-99aa-bc403aa86747}</from>
-            <to>{03f26bc9-8e8e-48f7-9b9a-df31ae0aeffb}</to>
+            <from>{24ff283d-162a-4c0b-9016-d1946765a4d4}</from>
+            <to>{e5fd3dfb-cdbb-4c1e-807a-17de9ad06d85}</to>
             <fromPort>1</fromPort>
             <toPort>0</toPort>
             <style>1</style>
@@ -106,11 +137,22 @@
     </links>
     <groups>
         <group>
-            <id>{03f26bc9-8e8e-48f7-9b9a-df31ae0aeffb}</id>
-            <from>{f90b84fb-06f0-4b96-b00a-d985a7f9ec55}</from>
-            <to>{340693fa-a903-4176-b048-bd8bbc363da4}</to>
-            <x>319.424</x>
-            <y>13.53</y>
+            <id>{863046e8-1c28-42dc-a479-5a7ac0c30896}</id>
+            <from>{e5fd3dfb-cdbb-4c1e-807a-17de9ad06d85}</from>
+            <to>{cf7c6f5a-25f3-4094-bfed-5a204159c527}</to>
+            <x>0</x>
+            <y>0</y>
+            <group>{5fdb675f-0e28-4be1-b683-395a522b42dc}</group>
+            <angle>0</angle>
+            <shearh>0</shearh>
+            <shearv>0</shearv>
+        </group>
+        <group>
+            <id>{5fdb675f-0e28-4be1-b683-395a522b42dc}</id>
+            <from>{863046e8-1c28-42dc-a479-5a7ac0c30896}</from>
+            <to>{863046e8-1c28-42dc-a479-5a7ac0c30896}</to>
+            <x>0</x>
+            <y>22</y>
             <angle>0</angle>
             <shearh>0</shearh>
             <shearv>0</shearv>

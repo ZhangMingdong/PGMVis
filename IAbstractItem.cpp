@@ -142,18 +142,14 @@ bool IAbstractItem::readGroup(QXmlStreamReader& reader)
 	else return false;
 }
 
-QPointF IAbstractItem::GetGroupPos(){
 
-	BGGroup* isGroup = dynamic_cast<BGGroup*>(this);
-	QPointF pos = isGroup ? this->i_posAbs() : this->i_posRel();
-	BGGroup* group = i_group();
-	if (group)
-	{
-		return pos + group->GetGroupRel();
-	}
-	else{
-		return pos;
-	}
+QPointF IAbstractItem::getItemCenter(){
+
+	BGGroup* isGroup = dynamic_cast<BGGroup*>(this);	// if this item is a group
+	BGGroup* group = i_group();							// if this item in a group
+
+	QPointF pos = isGroup ? this->i_posAbs() : this->i_posRel();	// for group, use relavant position, otherwise absolute
+	return group ? pos + group->i_posGrp() : pos;				// if in group, add group relevant position
 }
 
 void IAbstractItem::RemoveLinks(){

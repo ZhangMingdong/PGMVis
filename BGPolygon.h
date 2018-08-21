@@ -35,6 +35,7 @@ protected:
 	virtual void updateTransform();
 	virtual QPointF i_posAbs();
 	virtual QPointF i_posRel();
+	virtual QPointF i_posGrp();
 	virtual BGGroup* i_group();
 public:
 	virtual void updateLink(){}

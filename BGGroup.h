@@ -45,6 +45,7 @@ protected:
 	virtual void updateTransform();
 	virtual QPointF i_posAbs();
 	virtual QPointF i_posRel();
+	virtual QPointF i_posGrp();
 	virtual BGGroup* i_group();
 	virtual int getChildPos(QUuid id);
 public:
@@ -75,9 +76,6 @@ private:
 	QRectF boundingRect() const;
 	int roundness(double size) const;
 public:
-
-	QPointF GetGroupRel() {
-		return i_posRel();
-	}
+	friend class IAbstractItem;
 };
 

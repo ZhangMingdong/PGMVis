@@ -78,16 +78,15 @@ public:
 	virtual void setY(int y) = 0;
 public:
 	virtual QPointF getLinkPos(QPointF ptTarget) = 0;
-	virtual QPointF getItemCenter(){
-		return GetGroupPos();
-	}
+	virtual QPointF getItemCenter();			// get the position of the center of this item
 	virtual QString getPortId(int index){ return ""; };
 protected:
 	virtual bool i_isSelected() = 0;
 	virtual void i_update() = 0;
 	virtual void updateTransform() = 0;
-	virtual QPointF i_posAbs()=0;
-	virtual QPointF i_posRel()=0;
+	virtual QPointF i_posAbs() = 0;			// position in the scene
+	virtual QPointF i_posRel() = 0;			// position in its parent
+	virtual QPointF i_posGrp() = 0;			// position consider the group
 	virtual BGGroup* i_group() = 0;
 public slots:
 	void setLocation(int x, int y);
@@ -96,8 +95,6 @@ protected:
 	bool readGroup(QXmlStreamReader& reader);
 public:
 	QUuid GetGroupId(){ return m_groupid; }
-	// get the position of this item, considering group hierarchy
-	virtual QPointF GetGroupPos();
 public:
 	virtual void updateLink()=0;
 

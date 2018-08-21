@@ -15,7 +15,7 @@ BGGroup::BGGroup() :m_nIndexFrom(0)
 , m_nIndexTo(0)
 {
 	setFlags(QGraphicsItem::ItemIsMovable | QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemSendsGeometryChanges);
-
+	QGraphicsItemGroup::setHandlesChildEvents(false);
 }
 
 BGGroup::~BGGroup()
@@ -151,6 +151,12 @@ QPointF BGGroup::i_posRel()
 {
 	return this->pos();
 }
+QPointF BGGroup::i_posGrp()
+{
+	BGGroup* group = i_group();
+	return group ? i_posRel() + group->i_posGrp() : i_posRel();
+}
+
 
 QPointF BGGroup::getRotationCenter(){
 	return childItems()[0]->pos();
@@ -329,13 +335,8 @@ int BGGroup::roundness(double size) const
 }
 
 QPointF BGGroup::getLinkPos(QPointF ptTarget){
+	qDebug() << "getLinkPos" << endl;
 	// 1.get the center of this group
-	/*
-	QRectF rect = this->outlineRect();
-	rect.translate(this->GetGroupPos());
-	QPointF ptCenter = rect.center();
-	*/
-
 	QRectF rect = this->outlineRect();
 	QPointF ptCenter = i_posAbs();
 	// 2.calculate bias
@@ -363,4 +364,3 @@ QPointF BGGroup::getLinkPos(QPointF ptTarget){
 BGGroup* BGGroup::i_group(){
 	return dynamic_cast<BGGroup*>(this->group());
 }
-

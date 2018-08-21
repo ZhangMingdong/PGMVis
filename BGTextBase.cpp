@@ -177,7 +177,7 @@ bool BGTextBase::readProperties(QXmlStreamReader& reader){
 
 QPointF BGTextBase::getLinkPos(QPointF ptTarget){
 	QRectF rect = this->outlineRect();
-	QPointF ptCenter = this->GetGroupPos()+rect.center();
+	QPointF ptCenter = this->getItemCenter();
 	QPointF pt[4];
 	qreal len[4];
 	pt[0] = QPointF(ptCenter.x(), ptCenter.y() - rect.height() / 2.0);

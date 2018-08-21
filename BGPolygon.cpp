@@ -313,6 +313,7 @@ void BGPolygon::i_update(){}
 void BGPolygon::updateTransform(){}
 QPointF BGPolygon::i_posAbs(){ return this->pos(); }
 QPointF BGPolygon::i_posRel(){ return this->pos(); }
+QPointF BGPolygon::i_posGrp() { return this->pos(); }
 BGGroup* BGPolygon::i_group(){
 	return NULL;
 }

@@ -4,8 +4,8 @@
         <sphere>
             <id>{6022b089-093b-4800-9d5c-3af93c2f486c}</id>
             <dataId>-1</dataId>
-            <x>498</x>
-            <y>147</y>
+            <x>230</x>
+            <y>119</y>
             <brush>
                 <color>
                     <r>0</r>
@@ -109,7 +109,7 @@
             <fromPort>1</fromPort>
             <toPort>0</toPort>
             <style>1</style>
-            <weight>0</weight>
+            <weight>9</weight>
         </link>
     </links>
     <groups>
@@ -117,11 +117,11 @@
             <id>{e91f0c32-fb41-4e99-89c7-fb48efa27ddb}</id>
             <from>{33f7d327-7d16-48ac-9219-2793f9867068}</from>
             <to>{82cdea85-52a0-47cb-b943-e956cbc9e2ff}</to>
-            <x>-95.845</x>
-            <y>28</y>
+            <x>-90.845</x>
+            <y>60</y>
             <angle>0</angle>
             <shearh>0</shearh>
-            <shearv>0</shearv>
+            <shearv>2.77556e-17</shearv>
         </group>
     </groups>
 </diagram>
